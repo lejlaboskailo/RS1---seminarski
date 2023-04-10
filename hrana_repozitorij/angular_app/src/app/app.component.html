@@ -1,0 +1,76 @@
+<nav class="mainNav navbar navbar-expand-lg navbar-light top" >
+  <div class="container">
+    <a class="navbar-brand">eHrana</a>
+    <button style="color:white" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars ms-1"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+        <li class="nav-item"><a class="nav-link" routerLink="home" (click)="clicked('Home')" [ngClass]="this.trenutnaSelekcija == 'Home' ? 'fw-bold active' : ''">Početna</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="meni" (click)="clicked('Meni')" [ngClass]="this.trenutnaSelekcija == 'Meni' ? 'fw-bold active' : ''">Meni</a></li>
+
+      </ul>
+
+      <ul class="navbar-nav d-flex">
+        <li class="nav-item dropdown">
+          <button class="nav-link dropdown-toggle btn btn-outline-dark flex-shrink-0 mx-2" style="background-color: white; color: black"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" [ngClass]="this.trenutnaSelekcija == 'Omiljeno' ? 'fw-bold active' : ''">Omiljeno</button>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#" routerLink="omiljene-stavke" (click)="clicked('Omiljeno')">
+              <i class="bi bi-bookmark-heart-fill rounded-pill"></i>
+              Najdraže stavke</a></li>
+
+
+          </ul>
+        </li>
+
+
+        <li class="btn btn-outline-dark flex-shrink-0 mx-2" style="background-color: white; color: black"  routerLink="narudzba" (click)="clicked('Home')">
+          <i class="bi-cart-fill me-1"></i>
+          Korpa
+          <span class="badge bg-light text-black ms-1 rounded-pill" id="kolicina">0</span>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <button class="nav-link dropdown-toggle btn btn-outline-dark flex-shrink-0 mx-2"  role="button" style="background-color: white; color: black"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-lines-fill"></i>
+              Moj profil
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="" routerLink="moje-narudzbe" (click)="clicked('Home')">
+                <i class="bi bi-basket-fill"></i>
+                Moje narudžbe
+              </a>
+              <a class="dropdown-item" href="" routerLink="podaci" (click)="clicked('Home')">
+                <i class="bi bi-gear-fill"></i>
+                Postavke profila
+              </a>
+              <a class="dropdown-item" href="" (click)="odjava()">
+                <i class="bi bi-door-closed-fill"></i>
+                Odjavi se
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <li class="btn btn-outline-dark flex-shrink-0 mx-2" style="background-color: white; color: black"  routerLink="registracija">
+        <i class="bi bi-person-plus-fill"></i>
+        Registracija
+      </li>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+<!-- Footer-->
+<footer class="footer py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-4 text-lg-start"></div>
+      <div class="col-lg-4 my-3 my-lg-0" style="text-align: center">
+            Copyright &copy; eHrana 2023
+      </div>
+      <div class="col-lg-4 text-lg-end">
+      </div>
+    </div>
+  </div>
+</footer>
